@@ -19,9 +19,6 @@ app.get("/", autoCatch(async (req, res) => {
     res.sendFile(path.join(__dirname, "../", "canvas.html"));
 }));
 
-// #############################################################################
-
-// classify image data
 app.post("/classify",
     autoCatch(async (req, res) => {
         const pixels = req.body as number[];
@@ -29,15 +26,11 @@ app.post("/classify",
         res.status(200).send({ prediction });
     }));
 
-// #############################################################################
-
 app.use((err: any, req: any, res: any, next: any) => {
     console.log(err);
     res.status(Number(err.message) || 500);
     res.send();
 });
-
-// #############################################################################
 
 const server = createServer(app);
 server.listen(5454, () => {
