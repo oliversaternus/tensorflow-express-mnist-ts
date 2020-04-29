@@ -88,7 +88,7 @@ async function testModel(testData: Data) {
 async function main() {
     const data = openMNIST();
     defineModel();
-    await trainModel(data.train, 100);
+    await trainModel(data.train, 50);
     await testModel(data.test);
 }
 
