@@ -17,28 +17,20 @@ function defineModel() {
         filters: 8,
         inputShape: [28, 28, 1],
         kernelInitializer: "varianceScaling",
-        kernelSize: 7,
-        strides: 1
-    }));
-    model.add(layers.maxPooling2d({ poolSize: [2, 2], strides: [2, 2] }));
-    model.add(layers.conv2d({
-        activation: "relu",
-        filters: 12,
-        kernelInitializer: "varianceScaling",
         kernelSize: 5,
-        strides: 1,
+        strides: 1
     }));
     model.add(layers.maxPooling2d({ poolSize: [2, 2], strides: [2, 2] }));
     model.add(layers.conv2d({
         activation: "relu",
         filters: 16,
         kernelInitializer: "varianceScaling",
-        kernelSize: 3,
+        kernelSize: 5,
         strides: 1,
     }));
     model.add(layers.maxPooling2d({ poolSize: [2, 2], strides: [2, 2] }));
     model.add(layers.flatten());
-    model.add(layers.dense({ units: 3, activation: "softmax" }));
+    model.add(layers.dense({ units: 10, activation: "softmax" }));
     const optimizer = train.adam();
     model.compile({ optimizer, loss: "categoricalCrossentropy", metrics: ["accuracy"] });
 }
