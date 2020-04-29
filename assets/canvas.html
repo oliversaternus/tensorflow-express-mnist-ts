@@ -175,7 +175,7 @@
         }
         let prediction;
         try {
-            result = await fetch(baseUrl + '/api/predict', {
+            result = await fetch(baseUrl + '/classify', {
                 headers: {
                     'Content-Type': 'application/json'
                 },

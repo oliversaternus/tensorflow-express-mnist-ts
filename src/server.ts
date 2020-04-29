@@ -7,7 +7,7 @@ import workerpool from "workerpool";
 import autoCatch from "./tools/catch";
 
 const app: express.Application = express();
-const pool = workerpool.pool(__dirname + "/worker.js");
+const pool = workerpool.pool(__dirname + "/tools/worker.js");
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
