@@ -13,12 +13,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors());
 
-app.get("/", autoCatch(async (req, res) => {
-    res.sendFile(path.join(__dirname, "../", "assets", "canvas.html"));
-}));
+app.use(express.static(path.join(__dirname, "../", "assets")));
 
-app.get("/dist/bundle.js", autoCatch(async (req, res) => {
-    res.sendFile(path.join(__dirname, "../", "assets", "bundle.js"));
+app.get("/", autoCatch(async (req, res) => {
+    res.sendFile(path.join(__dirname, "../", "canvas.html"));
 }));
 
 // #############################################################################
