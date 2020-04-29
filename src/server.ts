@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.get("/", autoCatch(async (req, res) => {
-    res.sendFile(path.join(__dirname, "../", "assets", "index.html"));
+    res.sendFile(path.join(__dirname, "../", "assets", "canvas.html"));
 }));
 
 app.get("/dist/bundle.js", autoCatch(async (req, res) => {
