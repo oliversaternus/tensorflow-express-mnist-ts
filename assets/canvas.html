@@ -4,28 +4,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         body {
-                    background-color: rgb(240, 233, 138);
-                    padding: 24px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    flex-direction: column;
-                }
+            background-color: rgb(240, 233, 138);
+            padding: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
 
-                canvas {
-                    background-color: #ffffff;
-                    border: 2px solid #000000;
-                }
+        canvas {
+            background-color: #ffffff;
+            border: 2px solid #000000;
+        }
 
-                .text {
-                    width: 150px;
-                    padding-top: 24px;
-                    font-family: Arial, Helvetica, sans-serif;
-                    font-size: 20px;
-                    height: 23px;
-                    color: #000000;
-                }
-            </style>
+        .text {
+            width: 150px;
+            padding-top: 24px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            height: 23px;
+            color: #000000;
+        }
+    </style>
 </head>
 <script type="text/javascript">
     var canvas, ctx, flag = false,
@@ -159,7 +159,7 @@
         if (!diff) {
             return false;
         }
-        const moved = [];
+        let moved = [];
         for (let i = 0; i < 28; i++) {
             let temp = [];
             for (let j = 0; j < 28; j++) {
@@ -171,7 +171,7 @@
                     temp[j] = scaled[itemp][jtemp];
                 }
             }
-            moved.push(temp);
+            moved = moved.concat(temp);
         }
         let prediction;
         try {
