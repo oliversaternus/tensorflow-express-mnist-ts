@@ -10,7 +10,7 @@
     try {
         if (!model) {
             model = await loadLayersModel(
-                "file://" + path.join(__dirname, "../", "../", "saved", "1573478850870", "model.json"));
+                "file://" + path.join(__dirname, "../", "../", "saved", "default", "model.json"));
         }
 
         const pixelTensor = tensor(pixels, [1, 28, 28, 1]);
