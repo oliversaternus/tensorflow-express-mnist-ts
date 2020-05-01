@@ -16,7 +16,7 @@ app.use(cors());
 app.use(express.static(path.join(__dirname, "../", "assets")));
 
 app.get("/", autoCatch(async (req, res) => {
-    res.sendFile(path.join(__dirname, "../", "canvas.html"));
+    res.sendFile(path.join(__dirname, "../", "index.html"));
 }));
 
 app.post("/classify",
